@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { useNavigate, Link } from "react-router-dom";
+import { useAuth } from "../context/authContext.jsx";
 
 export default function Signup() {
     const { signup } = useAuth();
@@ -14,14 +14,9 @@ export default function Signup() {
     const submit = async (e) => {
         e.preventDefault();
         try {
-            const user = await signup({ name, email, password, role });
-
-            // Redirect based on selected role
-            if (role === "admin") {
-                navigate("/admin");
-            } else {
-                navigate("/");
-            }
+            await signup({ name, email, password, role });
+            // After successful signup, redirect user to the login page
+            navigate("/login");
 
         } catch (err) {
             alert(err.response?.data?.message || "Signup failed");
@@ -63,13 +58,15 @@ export default function Signup() {
                     onChange={(e) => setRole(e.target.value)}
                     className="w-full border px-3 py-2 rounded"
                 >
-                    <option value="customer">user</option>
+                    <option value="user">user</option>
                     <option value="admin">admin</option>
                 </select>
 
-                <button className="w-full py-2 bg-green-600 text-white rounded">
-                    Create account
-                </button>
+                <button type="submit" className="w-full py-2 bg-green-600 text-white rounded">Create account</button>
+
+                <div className="text-center mt-2">
+                    <Link to="/login" className="text-sm text-blue-600">Already have an account? Login</Link>
+                </div>
             </form>
         </div>
     );

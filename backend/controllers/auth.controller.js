@@ -38,7 +38,7 @@ const setCookies = (res, accessToken, refreshToken) => {
 };
 
 export const signup = async (req, res) => {
-	const { email, password, name } = req.body;
+	const { email, password, name, role = "user" } = req.body;
 	try {
 		const userExists = await User.findOne({ email });
 
@@ -47,7 +47,7 @@ export const signup = async (req, res) => {
 		}
 
 		const verificationToken = Math.floor(100000 + Math.random() * 900000).toString();
-		const user = await User.create({ name, email, password, verificationToken });
+		const user = await User.create({ name, email, password, verificationToken, role });
 
 		// authenticate
 		const { accessToken, refreshToken } = generateTokens(user._id);
@@ -69,6 +69,16 @@ export const signup = async (req, res) => {
 		res.status(500).json({ message: error.message });
 	}
 };
+
+
+
+
+
+
+
+
+
+
 
 export const verifyEmail = async (req, res) => {
     const { code } = req.body;
@@ -109,22 +119,39 @@ export const verifyEmail = async (req, res) => {
 export const login = async (req, res) => {
 	try {
 		const { email, password } = req.body;
+
+		// Debug: Log full request body for troubleshooting
+		console.log("Login request received - full body:", req.body);
+
+		// Validate that email and password are provided
+		if (!email || !password) {
+			console.log("Validation failed - missing email or password", { email, password });
+			return res.status(400).json({ message: "Email and password are required" });
+		}
+
 		const user = await User.findOne({ email });
 
-		if (user && (await user.comparePassword(password))) {
-			const { accessToken, refreshToken } = generateTokens(user._id);
-			await storeRefreshToken(user._id, refreshToken);
-			setCookies(res, accessToken, refreshToken);
-
-			res.json({
-				_id: user._id,
-				name: user.name,
-				email: user.email,
-				role: user.role,
-			});
-		} else {
-			res.status(400).json({ message: "Invalid email or password" });
+		if (!user) {
+			console.log("User not found for email:", email);
+			return res.status(400).json({ message: "Invalid email or password" });
 		}
+
+		const isPasswordValid = await user.comparePassword(password);
+		if (!isPasswordValid) {
+			console.log("Invalid password for email:", email);
+			return res.status(400).json({ message: "Invalid email or password" });
+		}
+
+		const { accessToken, refreshToken } = generateTokens(user._id);
+		await storeRefreshToken(user._id, refreshToken);
+		setCookies(res, accessToken, refreshToken);
+
+		res.json({
+			_id: user._id,
+			name: user.name,
+			email: user.email,
+			role: user.role,
+		});
 	} catch (error) {
 		console.log("Error in login controller", error.message);
 		res.status(500).json({ message: error.message });

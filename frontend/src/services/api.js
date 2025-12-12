@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "/api", // assumes backend is same origin or Vite proxy is configured
-  withCredentials: true, // ensure cookies (httpOnly) are sent
+  baseURL: "/api", // Use relative URL to work with Vite proxy
+  withCredentials: true,
   headers: { "Content-Type": "application/json" },
 });
 

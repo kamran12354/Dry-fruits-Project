@@ -27,15 +27,20 @@ export function AuthProvider({ children }) {
     fetchProfile();
   }, []);
 
-  const login = async (email, password) => {
-    const res = await api.post("/auth/login",  email, password );
-    setUser(res.data);
-    return res.data;
+  const login = async (credentials) => {
+    try {
+      const res = await api.post("/auth/login", credentials);
+      setUser(res.data);
+      return res.data;
+    } catch (error) {
+      // Re-throw the error so Login.jsx can handle it
+      throw error;
+    }
   };
 
   const signup = async (payload) => {
     const res = await api.post("/auth/signup", payload);
-    setUser(res.data);
+    // Do not auto-set the user on signup. After signup the user should log in.
     return res.data;
   };
 

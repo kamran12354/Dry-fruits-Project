@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
@@ -27,6 +26,38 @@ export default function NavBar() {
           >
             About
           </Link>
+
+
+
+          <Link 
+            to="/contact" 
+            className="hover:text-orange-600 transition"
+          >
+            Contact
+          </Link>
+
+          <Link 
+            to="/faqs" 
+            className="hover:text-orange-600 transition"
+          >
+            FAQs
+          </Link>
+
+          <Link 
+            to="/returns" 
+            className="hover:text-orange-600 transition"
+          >
+           Returns
+          </Link>
+
+          <Link 
+            to="/privacypolicy" 
+            className="hover:text-orange-600 transition"
+          >
+           PrivacyPolicy
+          </Link>
+
+          
 
           <Link 
             to="/products" 

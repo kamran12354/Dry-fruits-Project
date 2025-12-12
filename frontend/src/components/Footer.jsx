@@ -1,7 +1,6 @@
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Home from "../pages/Home.jsx";
-import Products from "../pages/Products.jsx";
+
 
 export default function Footer() {
   return (
@@ -61,7 +60,10 @@ export default function Footer() {
               <li><Link to="/" className="hover:text-white transition">Home</Link></li>
               <li><Link to="/products" className="hover:text-white transition">Products</Link></li>
               <li><Link to="/about" className="hover:text-white transition">About Us</Link></li>
+
+              
               <li><Link to="/contact" className="hover:text-white transition">Contact</Link></li>
+
             </ul>
           </div>
 
@@ -69,10 +71,9 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-semibold text-white mb-4">Support</h3>
             <ul className="space-y-2 text-gray-400">
-              <li className="hover:text-white transition cursor-pointer">FAQs</li>
-              <li className="hover:text-white transition cursor-pointer">Shipping</li>
-              <li className="hover:text-white transition cursor-pointer">Returns</li>
-              <li className="hover:text-white transition cursor-pointer">Privacy Policy</li>
+              <li><Link to="/" className="hover:text-white transition">FAQs</Link></li>
+              <li><Link to="/returns" className="hover:text-white transition">Returns</Link></li>
+              <li><Link to="/privacypolicy" className="hover:text-white transition">PrivacyPolicy</Link></li>
             </ul>
           </div>
 
