@@ -2,91 +2,72 @@ import React from "react";
 
 export default function PrivacyPolicy() {
   return (
-    <section className="max-w-3xl mx-auto p-6 bg-white rounded-2xl shadow-md leading-relaxed">
+    <section className="max-w-3xl mx-auto p-6 bg-white rounded-2xl shadow-md">
       <header className="mb-6">
         <h1 className="text-3xl font-semibold">Privacy Policy</h1>
         <p className="mt-2 text-sm text-gray-600">
-          Your privacy is important to us. This policy outlines how we collect, use, and protect your
-          information when you use our website or purchase our products.
+          We care about your privacy and protect your personal information.
         </p>
       </header>
 
-      <div className="space-y-6 text-gray-700">
+      <div className="space-y-5 text-gray-700">
         <div>
-          <h2 className="text-xl font-semibold mb-2">1. Information We Collect</h2>
-          <p>We may collect the following information when you visit our website or place an order:</p>
-          <ul className="list-disc ml-6 mt-2 space-y-1">
-            <li>Full name</li>
-            <li>Phone number and email address</li>
-            <li>Shipping and billing address</li>
-            <li>Order details and preferences</li>
-            <li>Browser and device information (for analytics)</li>
+          <h2 className="text-xl font-semibold mb-1">1. Information We Collect</h2>
+          <ul className="list-disc ml-6 text-sm space-y-1">
+            <li>Name and contact details</li>
+            <li>Delivery address</li>
+            <li>Order information</li>
           </ul>
         </div>
 
         <div>
-          <h2 className="text-xl font-semibold mb-2">2. How We Use Your Information</h2>
-          <ul className="list-disc ml-6 mt-2 space-y-1">
-            <li>To process and deliver your orders</li>
-            <li>To improve website performance and user experience</li>
-            <li>To send order updates or promotional messages (only if you opt‑in)</li>
-            <li>To verify payments and prevent fraudulent activities</li>
+          <h2 className="text-xl font-semibold mb-1">2. How We Use Your Information</h2>
+          <ul className="list-disc ml-6 text-sm space-y-1">
+            <li>To deliver your orders</li>
+            <li>To contact you about your order</li>
+            <li>To improve our services</li>
           </ul>
         </div>
 
         <div>
-          <h2 className="text-xl font-semibold mb-2">3. Protection of Your Data</h2>
-          <p>
-            We use secure servers, encrypted connections, and industry‑standard security methods to protect
-            your personal information from unauthorized access.
+          <h2 className="text-xl font-semibold mb-1">3. Data Security</h2>
+          <p className="text-sm">
+            We use safe methods to protect your personal data.
           </p>
         </div>
 
         <div>
-          <h2 className="text-xl font-semibold mb-2">4. Sharing of Information</h2>
-          <p>We do <strong>not</strong> sell or trade your information. However, we may share it with:</p>
-          <ul className="list-disc ml-6 mt-2 space-y-1">
-            <li>Delivery partners (for shipping your order)</li>
-            <li>Payment gateways (for processing payments)</li>
-            <li>Law authorities (only if legally required)</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-xl font-semibold mb-2">5. Cookies & Tracking</h2>
-          <p>
-            Our website may use cookies to enhance user experience, remember preferences, and track website
-            analytics. You can disable cookies anytime from your browser settings.
+          <h2 className="text-xl font-semibold mb-1">4. Sharing Information</h2>
+          <p className="text-sm">
+            We do not sell your data. We only share it with delivery or payment services if needed.
           </p>
         </div>
 
         <div>
-          <h2 className="text-xl font-semibold mb-2">6. Your Rights</h2>
-          <ul className="list-disc ml-6 mt-2 space-y-1">
-            <li>Request deletion of your data</li>
-            <li>Request correction of incorrect information</li>
-            <li>Opt‑out of promotional messages</li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-xl font-semibold mb-2">7. Policy Updates</h2>
-          <p>
-            We may update this Privacy Policy occasionally. All updates will be posted on this page with a
-            revised date.
+          <h2 className="text-xl font-semibold mb-1">5. Cookies</h2>
+          <p className="text-sm">
+            Cookies help improve your browsing experience. You can disable them anytime.
           </p>
         </div>
 
         <div>
-          <h2 className="text-xl font-semibold mb-2">8. Contact Us</h2>
-          <p>If you have questions regarding this Privacy Policy, feel free to contact us:</p>
-          <p className="mt-1">Email: <span className="text-emerald-600">support@dryfruitstore.com</span></p>
-          <p>WhatsApp: <span className="text-emerald-600">+92‑300‑XXXXXXX</span></p>
+          <h2 className="text-xl font-semibold mb-1">6. Your Rights</h2>
+          <ul className="list-disc ml-6 text-sm space-y-1">
+            <li>Update your information</li>
+            <li>Request data removal</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 className="text-xl font-semibold mb-1">7. Contact Us</h2>
+          <p className="text-sm">
+            Email: <span className="text-emerald-600">support@dryfruitstore.com</span>
+          </p>
         </div>
       </div>
 
-      <footer className="mt-8 text-sm text-gray-500">
-        We respect your privacy and are committed to protecting your personal data.
+      <footer className="mt-6 text-sm text-gray-500">
+        Your trust matters to us.
       </footer>
     </section>
   );

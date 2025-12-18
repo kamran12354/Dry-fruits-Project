@@ -12,7 +12,7 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <h2 className="text-3xl font-bold text-white mb-3">MyStore</h2>
+            <h2 className="text-3xl font-bold text-white mb-3">GB dry-fruits</h2>
             <p className="text-gray-400 text-sm leading-relaxed">
               High-quality products delivered to your door.
               Trusted by thousands of customers.

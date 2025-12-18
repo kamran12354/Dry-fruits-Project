@@ -2,10 +2,10 @@ import React from "react";
 
 export default function Features() {
   const items = [
-    { title: "Free Delivery", desc: "On orders over ₨ 1500", icon: "🚚", color: "bg-orange-100" },
+    { title: "Free Delivery", desc: "On orders over ₨ 15000", icon: "🚚", color: "bg-orange-100" },
     { title: "Fresh & Handpicked", desc: "Top quality dry fruits", icon: "🌰", color: "bg-yellow-100" },
     { title: "Secure Payment", desc: "Multiple payment options", icon: "🔒", color: "bg-green-100" },
-    { title: "Easy Returns", desc: "7-day return policy", icon: "🔁", color: "bg-blue-100" },
+    { title: "Easy Returns", desc: "2-day return policy", icon: "🔁", color: "bg-blue-100" },
   ];
 
   return (

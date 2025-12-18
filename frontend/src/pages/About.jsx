@@ -21,8 +21,7 @@ export default function About() {
           Our Mission
         </h2>
         <p className="text-gray-600 text-lg max-w-3xl mx-auto text-center leading-relaxed">
-          At GB Dry Fruits, our mission is simple — to provide 100% natural and fresh dry fruits that delight your taste buds, support healthy living, and reach you with care across Pakistan.
-        </p>
+          At GB Dry Fruits, our mission is to provide fresh and natural dry fruits that taste great, support a healthy lifestyle, and are delivered safely across Pakistan. </p>
       </div>
 
       {/* WHY CHOOSE US */}
